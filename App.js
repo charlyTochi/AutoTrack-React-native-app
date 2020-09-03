@@ -3,6 +3,8 @@ import {WebView} from 'react-native-webview';
 import { SplashScreen } from './screens/SplashScreen';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { MainScreen } from './screens/MainScreen';
+import { Root } from 'native-base';
+import { StatusBar, SafeAreaView } from 'react-native';
 
 
 
@@ -28,7 +30,12 @@ const MainNav = createSwitchNavigator({
 export default class App extends React.Component {
   render(){
     return(
-      <AppNavigator/>
+      <Root>
+      <SafeAreaView style={{ flex: 1}}>
+        <StatusBar barStyle="dark-content" backgroundColor="#003561"/>
+        <AppNavigator/>
+      </SafeAreaView>
+      </Root>
     )
   }
 }
